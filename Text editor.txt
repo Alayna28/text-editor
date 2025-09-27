@@ -1,0 +1,33 @@
+Text editor
+
+
+from tkinter import *
+window = Tk()
+window.title("event handler sample")
+window.geometry('100x100')
+def myfunc(event):
+  '''print the charatcer of the key pressed'''
+  print(event.char)
+window.bind("<Key>", myfunc)
+
+def handle_click(event):
+  print("\nthe button was clicked!")
+button = Button(window, text="click me")
+button.pack()
+button.bind("<Button-1>", handle_click)
+window.mainloop
+
+
+task2:
+
+
+from tkinter import *
+from tkinter import messagebox
+root = Tk()
+root.geometry("200x200")
+
+def msg():
+  messagebox.showwarning("ALERT!", "You have been hacked!")
+button = Button(root, text="SCAN FOR VIRUS", command=msg)
+button.place(x=40, y=80)
+root.mainloop()
